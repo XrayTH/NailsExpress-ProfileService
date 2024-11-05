@@ -10,6 +10,7 @@ const profileSchema = new mongoose.Schema({
     titulo: { type: String, required: true },
     descripción: { type: String, required: true },
     dirección: { type: String, required: true },
+    imagen: { type: String },
     portada: { type: String },
     servicios: { type: [String], default: [] },
     ubicación: { type: ubicacionSchema, required: true },
