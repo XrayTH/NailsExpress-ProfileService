@@ -11,6 +11,5 @@ router.post('/:email/publicaciones', publicationController.addPublication);
 router.delete('/:email/publicaciones/:index', publicationController.removePublication);
 router.put('/:email/publicaciones/:index', publicationController.updatePublication);
 router.patch('/:email/activo', publicationController.toggleActiveStatus);
-router.patch('/:email/toggle-active', publicationController.toggleActiveStatus);
 
 module.exports = router;

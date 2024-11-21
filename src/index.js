@@ -19,7 +19,7 @@ connectDB();
 // Rutas
 app.use('/profileService/perfiles', profileRoutes);
 app.use('/profileService/publicaciones', publicationRoutes);
-app.use('/profileService/reseñas', reviewRoutes);
+app.use('/profileService/reviews', reviewRoutes);
 
 // Iniciar el servidor
 app.listen(PORT, () => {
