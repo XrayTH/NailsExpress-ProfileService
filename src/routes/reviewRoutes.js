@@ -6,13 +6,13 @@ const reviewController = require('../controllers/reviewController');
 router.post('/:email', reviewController.createReview);
 
 // Añadir una nueva reseña a la lista
-router.post('/:email/reseñas', reviewController.addReview);
+router.post('/:email/reviews', reviewController.addReview);
 
 // Obtener el promedio de calificaciones
 router.get('/:email/promedio', reviewController.getAverageRating);
 
 // Borrar una reseña de la lista
-router.delete('/:email/reseñas/:index', reviewController.deleteReview);
+router.delete('/:email/reviews/:index', reviewController.deleteReview);
 
 // Cambiar estado activo
 router.patch('/:email/activo', reviewController.toggleActiveStatus);
