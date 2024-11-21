@@ -1,5 +1,15 @@
 const Review = require('../models/review');
 
+// Obtener todas las colecciones de reseñas
+exports.getAllReviews = async (req, res) => {
+    try {
+        const reviews = await Review.find(); // Obtiene toda la colección
+        res.status(200).json(reviews);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las reseñas', error });
+    }
+};
+
 // Crear nuevas reseñas con una lista vacía
 exports.createReview = async (req, res) => {
     try {

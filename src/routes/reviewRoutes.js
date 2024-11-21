@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const reviewController = require('../controllers/reviewController');
 
+// Obtener todas las colecciones de reseñas
+router.get('/', reviewController.getAllReviews);
+
 // Crear nuevas reseñas
 router.post('/:email', reviewController.createReview);
 
