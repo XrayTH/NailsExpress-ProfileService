@@ -11,7 +11,6 @@ const profileSchema = new mongoose.Schema({
     descripción: { type: String, required: true },
     dirección: { type: String, required: true },
     imagen: { type: String },
-    portada: { type: String },
     servicios: { type: [String], default: [] },
     ubicación: { type: ubicacionSchema, required: true },
     activo: { type: Boolean, default: true } // Nuevo atributo
