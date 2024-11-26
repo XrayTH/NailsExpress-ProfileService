@@ -10,6 +10,23 @@ exports.getAllReviews = async (req, res) => {
     }
 };
 
+// Obtener todas las reseñas de un profesional por su email
+exports.getReviewsByEmail = async (req, res) => {
+    try {
+        const { email } = req.params; // Obtener el email de los parámetros de la URL
+
+        // Buscar las reseñas asociadas al email del profesional
+        const review = await Review.findOne({ profesionalEmail: email });
+
+        if (!review) return res.status(404).json({ message: 'Perfil no encontrado' });
+
+        // Si se encuentran reseñas, las devolvemos
+        res.status(200).json(review.listaReseñas);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las reseñas', error });
+    }
+};
+
 // Crear nuevas reseñas con una lista vacía
 exports.createReview = async (req, res) => {
     try {

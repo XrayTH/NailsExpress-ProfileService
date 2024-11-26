@@ -3,6 +3,7 @@ const router = express.Router();
 const reviewController = require('../controllers/reviewController');
 
 router.get('/', reviewController.getAllReviews);
+router.get('/:email', reviewController.getReviewsByEmail);
 router.post('/:email', reviewController.createReview);
 router.post('/:email/reviews', reviewController.addReview);
 router.get('/:email/promedio', reviewController.getAverageRating);
